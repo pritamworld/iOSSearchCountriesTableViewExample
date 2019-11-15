@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  CountriesTableViewExample
 //
-//  Created by moxDroid on 2019-03-22.
+//  Created by moxDroid on 2019-11-14.
 //  Copyright © 2019 moxDroid. All rights reserved.
 // https://www.brunophilipe.com/blog/articles/swift-tutorial-mytodo/
 
@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //1 - Create Search View Controller
     var searchController: UISearchController!
     var countryNames: [String]?
     var countryCodeAndName :[String:String]?
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
         setCoutryArray()
     }
     
+     //2 - Set UP Search View Controller
     private func setupSearchBar()
     {
         //Initialize SearchView
@@ -103,6 +105,7 @@ extension ViewController{
     }
 }
 
+ //4 - Confirm UISearchBarDelegate Protocol
 extension ViewController: UISearchBarDelegate{
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
@@ -115,6 +118,7 @@ extension ViewController: UISearchBarDelegate{
     }
 }
 
+ //3 - Confirm UISearchResultsUpdating Protocol
 extension ViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
